@@ -1,20 +1,20 @@
 <html>
     <head>
-        <title>Ola's blog</title>
+        <title>Aprendendo Django</title>
     </head>
     <body>
         <div>
-            <h1><a href="">Django Gilrs Bolg</a></h1>
+            <h1><a href="">Apresentando dados:</a></h1>
         </div>
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenaen eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-        </div>
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenaen eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+            <!--https://tutorial.djangogirls.org/pt/django_templates/-->
         </div>
     </body>
 </html>
